@@ -8,12 +8,12 @@ class testClass1 extends TestMachine
 {
     public function testTest1()
     {
-        $this->assert(false, 'testTest1');
+        $this->assert(false, 'testTest1 failed');
     }
 
     public function testTest2()
     {
-        $this->assert(true, 'testTest2');
+        $this->assert(true, 'testTest2 success');
     }
 
 }

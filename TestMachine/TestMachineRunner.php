@@ -3,6 +3,13 @@
 
 namespace TestMachine\TestMachine;
 
+/*
+*   This class will look for all test classes in the path provided,
+*   then, run all test y report it to console.
+*   All test classes must be in files with names starting with 'test'.
+*   All test classes must extends TestMachine.
+*   All test methods must start with 'test' and set as public.
+*/
 class TestMachineRunner
 {
     private array       $reports = array();
@@ -14,6 +21,9 @@ class TestMachineRunner
     }
     public function run(string $path = '.')
     {
+        $this->reports = array();
+        $this->report_time = array();
+
         $this->consoleHeader('Test start: '. $path);
         
         $this->findTestClasses($path);
