@@ -90,7 +90,8 @@ class TestMachineRunner
         $cls = array();
         foreach(scandir($path) as $k => $f)
         {
-            if($f != '.' && $f != '..')
+            $f = mb_strtolower($f);
+            if($f != '.' && $f != '..' && $f != 'testmachine')
             {
                 if(is_dir($path . DIRECTORY_SEPARATOR . $f))
                 {
